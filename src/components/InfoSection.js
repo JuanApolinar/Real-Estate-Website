@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from './Button';
 
 const Section = styled.section`
+    background: #000d1a;    
     width: 100%;
     height: 100%;
     padding: 4rem 0rem;
@@ -13,7 +14,8 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 800px;
-
+    background: #fff;
+    
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
     }
