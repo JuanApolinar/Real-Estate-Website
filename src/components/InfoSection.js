@@ -25,7 +25,7 @@ const ColumnLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
-    padding: 1rem 2 rem;
+    padding: 1rem 2rem;
     order: ${({reverse}) => (reverse ? '2' : '1')};
 
     h1{
@@ -64,22 +64,37 @@ const ColumnRight = styled.div`
 const InfoSection = ({
     heading, 
     paragraphOne, 
-    ParagraphTwo, 
+    paragraphTwo, 
     ButtonLabel, 
     reverse, 
-    image
+    image,
+    delay
 }) => {
     return (
         <Section>
             <Container>
-                <ColumnLeft>
+                <ColumnLeft
+                    reverse={reverse}
+                    data-aos='fade-up'
+                    data-aos-duration='1000'
+                    data-aos-once='true'
+                    data-aos-delay={delay}
+                    data-aos-anchor-placement='center bottom'
+                >
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
-                    <p>{ParagraphTwo}</p>
+                    <p>{paragraphTwo}</p>
                     <Button to="/homes" primary='true'>{ButtonLabel}</Button>
                     </ColumnLeft>
                 <ColumnRight reverse={reverse}>
-                    <img src={image} alt="home"/>
+                    <img src={image} 
+                        alt="home"
+                        data-aos='zoom-out'
+                        data-aos-duration='1000'
+                        data-aos-once='true'
+                        data-aos-delay={delay}
+                        data-aos-anchor-placement='center bottom'
+                    />
                 </ColumnRight>
             </Container>
         </Section>
